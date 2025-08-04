@@ -301,9 +301,11 @@ function createOptimizedPicture(
  */
 function decorateTemplateAndTheme() {
   const addClasses = (element, classes) => {
-    classes.split(',').forEach((c) => {
-      element.classList.add(toClassName(c.trim()));
-    });
+    classes
+      .split(',')
+      .map((c) => toClassName(c.trim()))
+      .filter(Boolean) // Filters out empty strings, null, undefined
+      .forEach((c) => element.classList.add(c));
   };
   const template = getMetadata('template');
   if (template) addClasses(document.body, template);
