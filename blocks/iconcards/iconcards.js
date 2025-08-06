@@ -32,6 +32,7 @@ export default function decorate(block) {
     cardLink.className = 'action-link';
     cardLink.href = link.href;
     cardLink.setAttribute('aria-label', 'Shipment action');
+    cardLink.textContent = link.textContent?.trim() || 'Action';
     item.appendChild(cardLink);
 
     grid.appendChild(item);
