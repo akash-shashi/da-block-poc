@@ -8,5 +8,9 @@
   },
   {
     "...": "./blocks/*.json#/filters"
+  },
+  {
+    "...": "./page.json#/filters"
   }
+
 ]
