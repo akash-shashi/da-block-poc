@@ -29,6 +29,15 @@
           "...": "./blocks/*.json#/definitions"
         }
       ]
+    },
+    {
+      "title": "Form",
+      "id": "form",
+      "components": [
+        {
+          "...": "./form/*.json#/definitions"
+        }
+      ]
     }
   ]
 }
