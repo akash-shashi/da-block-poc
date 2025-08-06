@@ -1,18 +1,15 @@
 export default function decorate(block) {
-    // Create heading
-    const headingRow = block.querySelector('div');
-    const headingText = headingRow?.textContent || 'Manage your shipments';
+    const headingText = block.querySelector(':scope > div')?.textContent || 'Manage your shipments';
+    block.innerHTML = '';
+  
     const heading = document.createElement('h2');
     heading.className = 'shipment-actions-heading';
     heading.textContent = headingText;
-    block.innerHTML = ''; // Clear block
   
-    // Create grid
     const grid = document.createElement('div');
     grid.className = 'shipment-actions-grid';
   
-    // Loop through remaining rows
-    [...block.children].slice(1).forEach((row) => {
+    [...block.children].forEach((row) => {
       const cells = [...row.children];
       if (cells.length < 3) return;
   
