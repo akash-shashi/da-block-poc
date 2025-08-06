@@ -1,16 +1,19 @@
 .shipment-actions-heading {
-  font-size: 30px !important;
-  color: #4D148C !important;
-  font-weight: normal !important;
-  margin-top: 45px !important;
-  margin-bottom: 15px !important;
+    font-size: 30px !important;
+    color: #4D148C !important;
+    font-weight: normal !important;
+    margin-top: 45px !important;
+    margin-bottom: 40px !important;
+    text-align: center;
 }
 
 .shipment-actions-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-  gap: 1.5rem;
-  place-items: center; 
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(174px, 1fr));
+      gap: 1.5rem;
+      place-items: center;
+      max-width: 970px;
+      justify-self: center;
 }
 
 .action-item {
