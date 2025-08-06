@@ -1,0 +1,33 @@
+.shipment-actions-heading {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #4b0082;
+  }
+  
+  .shipment-actions-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+  }
+  
+  .action-item {
+    text-align: center;
+    max-width: 120px;
+  }
+  
+  .action-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 1rem;
+  }
+  
+  .action-item a {
+    color: #0072ce;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.85rem;
+  }
+  
