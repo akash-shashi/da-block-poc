@@ -1,8 +1,9 @@
 .shipment-actions-heading {
-  font-size: 1.75rem;
-  margin-bottom: 1.5rem;
-  font-weight: 600;
-  text-align: center;
+  font-size: 30px !important;
+  color: #4D148C !important;
+  font-weight: normal !important;
+  margin-top: 45px !important;
+  margin-bottom: 15px !important;
 }
 
 .shipment-actions-grid {
@@ -20,8 +21,8 @@
 }
 
 .action-item img {
-  width: 48px;
-  height: 48px;
+  width: 80px;
+  height: 80px;
   margin-bottom: 0.75rem;
 }
 
@@ -30,7 +31,6 @@
   width: 100%;
   height: 100%;
   text-decoration: none;
-  position: absolute;
-  top: 0;
-  left: 0;
+  color: #007ab7;
+  text-transform: uppercase; 
 }
