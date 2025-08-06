@@ -1,45 +1,50 @@
 export default function decorate(block) {
-  const firstDiv = block.querySelector(':scope > div');
-  const headingText = firstDiv?.textContent || 'Manage your shipments';
+  const headingRow = block.querySelector(':scope > div');
+  const headingText =
+    headingRow?.textContent?.trim() || 'Manage your shipments';
+
+  const secondRow = headingRow?.nextElementSibling;
+  const cells = [...(secondRow?.children || [])];
+
+  // Clear the block content
   block.innerHTML = '';
 
+  // Create heading
   const heading = document.createElement('h2');
   heading.className = 'shipment-actions-heading';
   heading.textContent = headingText;
 
+  // Create grid container
   const grid = document.createElement('div');
   grid.className = 'shipment-actions-grid';
 
-  // clone original children before innerHTML reset
-  const originalChildren = [...firstDiv?.nextElementSibling?.children || []];
+  // Loop over each icon+link cell
+  cells.forEach((cell) => {
+    const img = cell.querySelector('img');
+    const link = cell.querySelector('a');
 
-  originalChildren.forEach((row) => {
-    const cells = [...row.children];
-    if (cells.length < 3) return;
+    // Skip if either image or link is missing
+    if (!img || !link) return;
 
-    const icon = cells[0].textContent.trim();
-    const label = cells[1].textContent.trim();
-    const href = cells[2].textContent.trim();
-
+    // Create card container
     const item = document.createElement('div');
     item.className = 'action-item';
 
-    const iconSpan = document.createElement('span');
-    iconSpan.className = 'action-icon';
-    iconSpan.textContent = icon;
+    // Clone and append the image (outside the <a>)
+    item.appendChild(img.cloneNode(true));
 
-    const link = document.createElement('a');
-    link.href = href;
-    link.textContent = label;
+    // Create and append the empty clickable link
+    const cardLink = document.createElement('a');
+    cardLink.className = 'action-link';
+    cardLink.href = link.href;
+    cardLink.setAttribute('aria-label', 'Shipment action');
+    item.appendChild(cardLink);
 
-    const labelP = document.createElement('p');
-    labelP.appendChild(link);
-
-    item.appendChild(iconSpan);
-    item.appendChild(labelP);
+    // Add item to the grid
     grid.appendChild(item);
   });
 
+  // Append heading and grid to block
   block.appendChild(heading);
   block.appendChild(grid);
 }

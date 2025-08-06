@@ -1,33 +1,37 @@
 .shipment-actions-heading {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    color: #4b0082;
-  }
-  
-  .shipment-actions-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 3rem;
-  }
-  
-  .action-item {
-    text-align: center;
-    max-width: 120px;
-  }
-  
-  .action-icon {
-    font-size: 3rem;
-    display: block;
-    margin-bottom: 1rem;
-  }
-  
-  .action-item a {
-    color: #0072ce;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 0.85rem;
-  }
-  
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.shipment-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+  align-items: start;
+}
+
+.action-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.action-item img {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 0.75rem;
+}
+
+.action-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
