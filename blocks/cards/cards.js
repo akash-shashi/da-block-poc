@@ -1,7 +1,7 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
 
 export default function decorate(block) {
-  /* change to ul, li */
+  /* change to ul, li test message*/
   const ul = document.createElement('ul');
   [...block.children].forEach((row) => {
     const li = document.createElement('li');
